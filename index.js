@@ -202,15 +202,22 @@ Baskin Robins now offers new flavors, seasonal flavors, and even regional flavor
 from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors and store it in an array called randomFlavors.
 
 Use the getRandomFlavors function and new arrays below to do the following:
-    1. Receive the four arrays with all the differnet flavors (originalFlavors is above, the others are below)
+    1. Receive the four arrays with all the different flavors (originalFlavors is above, the others are below)
     2. Randomly pick flavors from all four arrays
-    3. Return a new array called randomFlavors that has a lenght of 31
+    3. Return a new array called randomFlavors that has a length of 31
 
     For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
-
-function getRandomFlavors(/*code here*/) {
-  /*code here*/
+const originalFlavors2 = [...originalFlavors];
+function getRandomFlavors(array, array2, array3, array4) {
+  const masterVar = [...array, ...array2, ...array3, ...array4];
+  let randomFlavors = [];
+  while (randomFlavors.length < 31) {
+    let randomIndex = Math.floor(Math.random() * (masterVar.length - 0) + 0);
+    randomFlavors.push([randomIndex]);
+    masterVar.splice(randomIndex, 1);
+  }
+  return randomFlavors;
 }
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
@@ -293,7 +300,12 @@ const regionalFlavors = [
   "Chocolate Chocolate Chip Cheesecake",
   "Caramel 'n' Cookies",
 ];
-
+getRandomFlavors(
+  originalFlavors2,
+  newFlavors,
+  seasonalFlavors,
+  regionalFlavors
+);
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
 function foo() {
   return "bar";
