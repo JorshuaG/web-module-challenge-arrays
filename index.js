@@ -139,7 +139,6 @@ function removeFlavorByName(array, string) {
       array.splice(i, 1);
     }
   }
-  console.log(array.length);
   return array;
 }
 
